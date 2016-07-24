@@ -1,8 +1,11 @@
 package com.example.youwei.myapplication;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer;
     NavigationView navigationView;
     int themeColor = R.color.colorPrimary;
+    ActivityManager.TaskDescription taskDesc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         if(getSharedPreferences("config", MODE_PRIVATE).getInt("themeColor", R.color.colorPrimary)!=R.color.colorPrimary) {
             Log.d("MainActivity", "111------>");
             SharedPreferences pref = getSharedPreferences("config", MODE_PRIVATE);
-            int themeColor = pref.getInt("themeColor", 0);
+            themeColor = pref.getInt("themeColor", 0);
             initTheme(themeColor);
         }
 
@@ -222,6 +226,7 @@ public class MainActivity extends AppCompatActivity
         editor.commit();
         changeNavItemColor(selectedColor);
         changeThemeColor(selectedColor);
+        changeTaskManager(selectedColor);
     }
 
     public void setThemeColor(int color) {
@@ -250,8 +255,20 @@ public class MainActivity extends AppCompatActivity
         mTabLayout.setBackgroundColor(color);
     }
 
+    private void changeTaskManager(int color) {
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            taskDesc = new ActivityManager.TaskDescription("My Application", bm, color);
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            MainActivity.this.setTaskDescription(taskDesc);
+        }
+    }
+
     private void initTheme(int color) {
         changeNavItemColor(color);
         changeThemeColor(color);
+        changeTaskManager(color);
     }
 }
