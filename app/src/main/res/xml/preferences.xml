@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <PreferenceCategory
+        android:title="主设置界面"
+        android:key="pref_key_storage_settings">
+        <CheckBoxPreference
+            android:key="pref_key"
+            android:summary="点击checkbox下面就亮"
+            android:title="试一试"
+            android:defaultValue="false"/>
+        <Preference
+            android:key="pref_key1"
+            android:dependency="pref_key"
+            android:summary="我亮了"
+            android:title="77777"/>
+        <Preference
+            android:key="pref_key2"
+            android:dependency="pref_key"
+            android:summary="我也亮了"
+            android:title="88888"/>
+    </PreferenceCategory>
+</PreferenceScreen>

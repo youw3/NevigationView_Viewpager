@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">设置</string>
+    <string name="color_palette">主色调</string>
+    <string name="colors">颜色</string>
+    <string name="done_label">确定</string>
+    <string name="cancel_label">取消</string>
+    <string name="back_label">返回</string>
+    <string name="custom_label">自定义颜色</string>
+    <string name="presets_label">预设颜色</string>
+</resources>

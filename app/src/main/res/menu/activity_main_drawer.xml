@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="栏目">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_android"
+                    android:icon="@drawable/ic_android"
+                    android:title="Android" />
+                <item
+                    android:id="@+id/nav_apple"
+                    android:icon="@drawable/ic_apple"
+                    android:title="Apple" />
+                <item
+                    android:id="@+id/nav_windows"
+                    android:icon="@drawable/ic_windows"
+                    android:title="Windows" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="交互">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_theme"
+                android:icon="@drawable/ic_color_lens_white_24dp"
+                android:title="主题" />
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="设置" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_emoticon_cool"
+                android:title="关于" />
+            </group>
+        </menu>
+    </item>
+
+
+</menu>

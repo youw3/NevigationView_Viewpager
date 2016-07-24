@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="嵌套设置界面" >
+        <CheckBoxPreference
+            android:key="pref_key_auto"
+            android:summary="点击checkbox下面就亮"
+            android:title="试一试"
+            android:defaultValue="false"/>
+        <Preference
+            android:key="pref_key_sms_delete_limit"
+            android:dependency="pref_key_auto"
+            android:summary="我亮了"
+            android:title="77777"/>
+        <Preference
+            android:key="pref_key_mms_delete_limit"
+            android:dependency="pref_key_auto"
+            android:summary="我也亮了"
+            android:title="88888"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
