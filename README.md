@@ -10,8 +10,9 @@ Metrial Design应用开发的基本框架
 -
 -  Viewpager + TabLayout(Tab由icon和title水平排列）
 -  NavigationView
--  ColorSelector(第三方库)改变全局主题颜色，包括ActivityManager.TaskDescription
+-  改变全局主题颜色，包括ActivityManager.TaskDescription
 -  
+
 ---
 ## 第三方库
 [afollestad/material-dialogs](https://github.com/afollestad/material-dialogs)
